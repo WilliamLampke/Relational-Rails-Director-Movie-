@@ -1,0 +1,15 @@
+<form action="/movies" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new movie title:</p>
+  <input type='text' name='movie[movietitle]'/><br/>
+  <p>Enter the movies genre:</p>
+  <input type='text' name='movie[genre]'/><br/>
+  <p>Enter the movies boxoffice:</p>
+  <input type='integer' name='movie[boxoffice]'><br/>
+  <p>Was the movie profitable?:</p>
+  <input type='radio' id='true' name='movie[profitable]' value=true>
+  <label for='True'>True</label><br>
+  <input type='radio' id='false' name='movie[profitable]' value=false>
+  <label for='False'>False</label><br>
+  <input type='submit'/>
+</form>

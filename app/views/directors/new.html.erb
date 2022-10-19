@@ -1,0 +1,15 @@
+<form action="/directors" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new director:</p>
+  <input type='text' name='director[name]'/><br/>
+  <p>Enter the directors hometown:</p>
+  <input type='text' name='director[hometown]'/><br/>
+  <p>Enter the directors birthyear:</p>
+  <input type='integer' name='director[birthyear]'><br/>
+  <p>Is the director still alive?:</p>
+  <input type='radio' id='true' name='director[alive]' value=true>
+  <label for='True'>True</label><br>
+  <input type='radio' id='false' name='director[alive]' value=false>
+  <label for='False'>False</label><br>
+  <input type='submit'/>
+</form>

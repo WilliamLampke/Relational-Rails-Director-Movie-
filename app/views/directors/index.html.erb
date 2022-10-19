@@ -1,0 +1,15 @@
+<h1>All Directors</h1>
+<h2><a href="/directors/new">New Director</a></h2>
+
+<% @directors.each do |director| %>
+  <h3><a href="/directors/<%= director.id %>"><%= director.name %></a></h3>
+  <p><%= director.hometown %></p>
+  <p><%= director.birthyear %></p>
+  <p><%= director.alive %></p>
+  <a href="/directors/<%= director.id %>/edit">Edit</a>
+   <form action="/directors/<%= director.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete"/>
+  </form>
+<% end %>   

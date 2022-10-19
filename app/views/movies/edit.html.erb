@@ -1,0 +1,16 @@
+<form action="/movies/<%= @movie.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <p>Edit movie title:</p>
+  <input type='text' name='movie[movietitle]' value="<%= @movie.movietitle %>"/><br/>
+  <p>Edit movie genre:</p>
+  <input type='text' name='movie[genre]' value="<%= @movie.genre %>"/><br/>
+  <p>Edit movie boxoffice:</p>
+  <input type='integer' name='movie[boxoffice]' value="<%= @movie.boxoffice %>"><br/>
+  <p>Edit movie profitable:</p>
+  <input type='radio' id='true' name='movie[profitable]' value=true <%= @movie.profitable ? "checked"  : "" %>>
+  <label for='true'>True</label><br>
+  <input type='radio' id='false' name='movie[profitable]' value=false <%= @movie.profitable ? ""  : "checked" %>>
+  <label for='false'>False</label><br>
+  <input type='submit'/>
+</form>
